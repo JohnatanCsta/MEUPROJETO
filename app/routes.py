@@ -1,14 +1,14 @@
 from app import app
 from flask import render_template
 
-@app.routes('/')
+@app.route('/')
 def index():
     return render_template('index.html', title = 'Inicio')
 
-@app.routes('/sobre')
+@app.route('/sobre')
 def sobre():
     return render_template('sobre.html', title = 'Sobre')
 
-@app.routes('/contato')
+@app.route('/contato')
 def contato():
     return render_template('contato.html', title = 'Contato')
