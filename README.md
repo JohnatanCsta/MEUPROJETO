@@ -1,4 +1,3 @@
-
 # Aplicação Flask para iniciantes
 
 O Flask é um framework web leve e minimalista em Python, ideal para iniciantes. Ele permite criar rapidamente aplicações web utilizando rotas simples e templates Jinja2. Sua comunidade ativa e ampla variedade de extensões facilitam o aprendizado e a adição de funcionalidades complexas sem complicações. O Flask oferece uma excelente porta de entrada para o desenvolvimento web em Python, tornando a criação de aplicações web uma experiência agradável e eficiente para iniciantes e programadores experientes.
@@ -64,3 +63,4 @@ Após iniciar a aplicação, você receberá um link redirecionando a página we
 ## Autor
 
 - [@johnatancsta](https://www.github.com/johnatancsta)
+ 
