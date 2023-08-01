@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Projetos</title> | {{title}}</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style.css')}}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: black;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+        nav {
+            background-color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        nav a {
+            text-decoration: none;
+            color: black;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border: 1px solid black;
+        }
+        nav a:hover {
+            background-color: black;
+            color: white;
+        }
+        section {
+            padding: 20px;
+        }
+        section h2 {
+            font-size: 24px;
+        }
+        section p {
+            font-size: 16px;
+        }
+        footer {
+            background-color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        footer p {
+            margin: 0;
+        }
+        .project {
+            border: 1px solid black;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        .project h3 {
+            font-size: 20px;
+            margin-top: 0;
+        }
+        .project p {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Página de Projetos</h1>
+    </header>
+    <nav>
+        <a href="/">Home</a>
+        <a href="sobre">Sobre</a>
+        <a href="contatos">Contato</a>
+    </nav>
+    <section>
+        <div class="project">
+            <h2>Projeto 1</h2>
+            <h3>Título do Projeto</h3>
+            <p>Descrição do projeto 1.</p>
+            <p>Recursos utilizados: HTML, CSS e JavaScript.</p>
+        </div>
+        <div class="project">
+            <h2>Projeto 2</h2>
+            <h3>Título do Projeto</h3>
+            <p>Descrição do projeto 2.</p>
+            <p>Recursos utilizados: Python, Flask e SQL.</p>
+        </div>
+        <!-- Adicione mais projetos aqui conforme necessário -->
+    </section>
+    <footer>
+        <p>Todos os direitos reservados &copy; 2023</p>
+    </footer>
+</body>
+</html>
