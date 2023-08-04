@@ -1,8 +1,11 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, EmailFild, TextAreaField
+from wtforms import StringField, EmailField, TextAreaField, SubmitField
 from wtforms.validators import DataRequired
+from flask_wtf.csrf import CSRFProtect
+
 
 class Contato(FlaskForm):
     nome = StringField('nome', validators=[DataRequired()])
-    email = EmailFild('email', validators=[DataRequired()])
-    conteudo = TextArealFild('conteudo')
+    email = EmailField('email', validators=[DataRequired()])
+    conteudo = TextAreaField('conteudo')
+    enviar = SubmitField('enviar')

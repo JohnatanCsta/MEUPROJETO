@@ -1,6 +1,7 @@
 from app import app
-from flask import render_template
-from app.forms import contato
+from flask import render_template,url_for, flash, redirect
+from app.forms import Contato
+import time
 
 @app.route('/')
 def index():
@@ -8,16 +9,18 @@ def index():
 
 @app.route('/sobre')
 def sobre():
-    return render_template('sobre.html', title = 'Sobre')
+    return render_template('sobre.html', title ='Sobre')
 
-@app.route('/contato')
+@app.route('/contato',methods=['GET','POST'])
 def contato():
-    return render_template('contato.html', title = 'Contato')
+    formulario = Contato()
+    if formulario.validate_on_submit():
+        mensagem = 'Seu formulario foi enviado com sucesso'
+        flash(mensagem)
+        time.sleep(2)
+        return redirect('contato')
+    return render_template('contato.html', title ='Contato', formulario = formulario)
 
 @app.route('/projetos')
-def projetos():
-    return render_template('projeto.html', title = 'Projetos')
-
-@app.route('/enviar-contato')
-def enviar():
-    formulario = Contato()
+def projeto():
+    return render_template('projeto.html', title ='Projetos')
