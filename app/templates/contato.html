@@ -11,6 +11,12 @@
     {% endfor %}
   {% endif %}
 {% endwith %}
+{% if dados_formulario %}
+    <p>Dados Formulário:</p>
+    <p>Nome: {{ dados_formulario.nome }}</p.>
+    <p>Email: {{ dados_formulario.email }}</p.>
+    <p>Conteudo: {{ dados_formulario.conteudo }}</p.>
+{% endif %}
 
   <form action="" method="post">
     {{formulario.csrf_token}}
@@ -24,7 +30,7 @@
     {{formulario.conteudo}}
 
     {{formulario.enviar}}
-    
+
   </form>
 </section>
 {% endblock %}
