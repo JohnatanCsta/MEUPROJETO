@@ -29,3 +29,7 @@ def contato():
 @app.route('/projetos')
 def projeto():
     return render_template('projeto.html', title ='Projetos') 
+
+@app.route('/teste')
+def teste():
+    return render_template('teste.html', title = 'Teste')

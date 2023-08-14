@@ -1,36 +1,53 @@
 {% extends 'base.html' %}
 
 {% block conteudo %}
-<section>
+<section class="container mt-4">
   <h2>Entre em contato</h2>
   <br>
-  {% with mensagens = get_flashed_messages() %}
-  {% if mensagens %}
-    {% for mensagem in mensagens %}
-      {{ mensagem }}
-    {% endfor %}
-  {% endif %}
-{% endwith %}
-{% if dados_formulario %}
-    <p>Dados Formulário:</p>
-    <p>Nome: {{ dados_formulario.nome }}</p.>
-    <p>Email: {{ dados_formulario.email }}</p.>
-    <p>Conteudo: {{ dados_formulario.conteudo }}</p.>
-{% endif %}
+  <div class="row">
+    <div class="col-md-6">
+      {% with mensagens = get_flashed_messages() %}
+        {% if mensagens %}
+          <div class="alert alert-info">
+            <ul>
+              {% for mensagem in mensagens %}
+                <li>{{ mensagem }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+      {% endwith %}
 
-  <form action="" method="post">
-    {{formulario.csrf_token}}
-    <label for="nome">Nome:</label>
-    {{formulario.nome}}
+      {% if dados_formulario %}
+        <div class="alert alert-success">
+          <p><strong>Dados do Formulário:</strong></p>
+          <p><strong>Nome:</strong> {{ dados_formulario.nome }}</p>
+          <p><strong>Email:</strong> {{ dados_formulario.email }}</p>
+          <p><strong>Conteúdo:</strong> {{ dados_formulario.conteudo }}</p>
+        </div>
+      {% endif %}
+    </div>
+    <div class="col-md-6">
+      <form action="" method="post">
+        {{ formulario.csrf_token }}
+        <div class="form-group">
+          <label for="nome">Nome:</label>
+          {{ formulario.nome(class="form-control") }}
+        </div>
 
-    <label for="email">Email:</label>
-    {{formulario.email}}
+        <div class="form-group">
+          <label for="email">Email:</label>
+          {{ formulario.email(class="form-control") }}
+        </div>
 
-    <label for="conteudo">Conteúdo:</label>
-    {{formulario.conteudo}}
+        <div class="form-group">
+          <label for="conteudo">Conteúdo:</label>
+          {{ formulario.conteudo(class="form-control") }}
+        </div>
 
-    {{formulario.enviar}}
-
-  </form>
+        {{ formulario.enviar(class="btn btn-primary") }}
+      </form>
+    </div>
+  </div>
 </section>
 {% endblock %}

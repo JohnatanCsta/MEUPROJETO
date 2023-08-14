@@ -1,8 +1,16 @@
 {% extends 'base.html' %}
 
 {% block conteudo %}
-<section id="sobre">
-    <h2>Sobre Mim</h2>
-    <p>Um pouco sobre mim e minha trajetória profissional.</p>
-  </section>
-  {% endblock %}
+<section id="sobre" class="container text-center mt-4">
+  <h2>Sobre Mim</h2>
+  <p>Um pouco sobre mim e minha trajetória profissional.</p>
+  
+  <div class="row mt-4">
+    <div class="col-md-6 offset-md-3">
+      <img src="{{url_for('static', filename='images/profile.jpg')}}" class="img-fluid rounded-circle" alt="Foto de Perfil">
+      <h3 class="mt-3">Johnatan Costa</h3>
+      <p>Desenvolvedor Web apaixonado por criar soluções criativas e funcionais.</p>
+    </div>
+  </div>
+</section>
+{% endblock %}
