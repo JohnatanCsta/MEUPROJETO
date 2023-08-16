@@ -3,6 +3,17 @@
 {% block conteudo %}
 <section id="inicio" class="container text-center mt-4">
   <div class="jumbotron">
+    {% with mensagens = get_flashed_messages() %}
+    {% if mensagens %}
+      <div class="alert alert-info">
+        <ul>
+          {% for mensagem in mensagens %}
+            <li>{{ mensagem }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+  {% endwith %}
     <h1 class="display-4">Seja bem-vindo(a)!</h1>
     <p class="lead">Esta é a página inicial do meu portfólio.</p>
   </div>

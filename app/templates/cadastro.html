@@ -1,6 +1,16 @@
 {% extends 'base.html' %}
 
 {% block conteudo %}
+<section class="main-content">
+    {% with messages = get_flashed_messages() %}
+          {% if messages %}
+              {% for mensagem in messages %}
+              <div class="alert alert-success" role="alert">
+                  {{ mensagem }}
+              </div>
+              {% endfor %}
+          {% endif %}
+      {% endwith %}
 
 <title>Cadastro - Seu Site</title>
 </head>
@@ -17,20 +27,25 @@
             <h3 class="text-center">Cadastro</h3>
           </div>
           <div class="card-body">
-            <form>
+            <form method="post">
+                {{ cadastro.csrf_token }}
               <div class="form-group">
                 <label for="nome">Nome:</label>
-                <input type="text" class="form-control" id="nome" name="nome" required>
+                {{ cadastro.nome(class="form-control", placeholder="Digite aqui o seu nome") }}
+              </div>
+              <div class="form-group">
+                <label for="sobrenome">Sobrenome:</label>
+                {{ cadastro.sobrenome(class="form-control", placeholder="Digite aqui o seu sobrenome") }}
               </div>
               <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="email" class="form-control" id="email" name="email" required>
+                {{ cadastro.email(class="form-control", placeholder="Digite aqui o seu email") }}
               </div>
               <div class="form-group">
                 <label for="senha">Senha:</label>
-                <input type="password" class="form-control" id="senha" name="senha" required>
+                {{ cadastro.senha(class="form-control", placeholder="Digite aqui o seu senha") }}
               </div>
-              <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
+              {{ cadastro.enviar(class="btn btn-primary")}}
             </form>
           </div>
         </div>
@@ -38,4 +53,4 @@
     </div>
   </div>
 
-  {% endblock %}
+{% endblock %}
