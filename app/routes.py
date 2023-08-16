@@ -26,10 +26,15 @@ def contato():
         db.session.commit()
 
     return render_template('contato.html', title = 'Contato', formulario = formulario, dados_formulario = dados_formulario)
+
 @app.route('/projetos')
 def projeto():
     return render_template('projeto.html', title ='Projetos') 
 
-@app.route('/teste')
-def teste():
-    return render_template('teste.html', title = 'Teste')
+@app.route('/cadastro')
+def cadastro():
+    return render_template('cadastro.html', title = 'Cadastro')
+
+@app.route('/login')
+def login():
+    return render_template('login.html', title = 'Login')
