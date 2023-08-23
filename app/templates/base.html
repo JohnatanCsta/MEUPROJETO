@@ -43,21 +43,25 @@
           <li class="nav-item">
             <a class="nav-link" href="/">Início</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/projetos">Projetos</a>
+          <li class="nav-item"><a class="nav-link" href="/projetos">Projetos</a></li>
+          <li class="nav-item"><a class="nav-link" href="/sobre">Sobre Mim</a></li>
+          <li class="nav-item"><a class="nav-link" href="/contato">Contato</a></li>
+          {% if session['email'] %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Olá {{ session['nome'].capitalize() }}
+            </a>
+            <div class="dropdown-menu" aria-labelledby="userDropdown">
+              <a class="dropdown-item" href="/editar">Editar Perfil</a>
+              <a class="dropdown-item" href="/excluir" onclick="return confirm('Tem certeza que deseja excluir sua conta? Essa ação');">Excluir Conta</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/sair">Sair</a>
+            </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/sobre">Sobre Mim</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/cadastro">Cadastro</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/login">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/contato">Contato</a>
-          </li>
+          {% else %}
+            <li class="nav-item"><a class="nav-link" href="/cadastro">Cadastro</a></li>
+            <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+          {% endif %}
         </ul>
         <ul class="navbar-nav social-icons">
           <li class="nav-item">

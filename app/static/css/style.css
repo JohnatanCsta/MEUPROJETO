@@ -36,7 +36,7 @@ body {
     color: #fff;
     text-align: space-around;
     padding: 10px;
-    position: absolute;
+    position: relative;
     bottom: 0;
     width: 100%;
   }
